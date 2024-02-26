@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+
+  resources :users do
+    resources :rentals, only: :index
+  end
+
+  resources :characters do
+    resources :rentals, only: [:new, :create]
+  end
+
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
