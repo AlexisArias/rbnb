@@ -1,6 +1,6 @@
 class RentalsController < ApplicationController
   def index
-    @rental = Rental.all
+    @rentals = current_user.rentals
   end
 
   def new
@@ -13,7 +13,7 @@ class RentalsController < ApplicationController
     @rental.character = Character.find(params[:character_id])
     if @rental.save!
       flash[:notice] = "Congratulations, you have booked a Kaamelott character!"
-      redirect_to root_path
+      redirect_to user_rentals_path(current_user)
     else
       flash[:alert] = "Warning, there was an issue creating your booking!"
       render :new, status: :unprocessable_entity
