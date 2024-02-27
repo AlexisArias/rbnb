@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  get 'rentals/index'
+  get 'rentals/new'
+  get 'rentals/create'
   devise_for :users
 
   resources :users do
