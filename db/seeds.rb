@@ -7,3 +7,91 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Clearing database..."
+
+Character.destroy_all
+
+puts "Database cleared!"
+
+
+puts "Creating Kaamelott characters..."
+
+Character.create(
+  name: 'Dame Séli',
+  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche !",
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Le roi Loth',
+  description: "Tempora mori, tempora mundis recorda. Voilà. Eh bien ça, par exemple, ça veut absolument rien dire",
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Perceval de Galles',
+  description: "Faut arrêter ces conneries de nord et de sud ! Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout !",
+  price: 60.00,
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Léodagan',
+  description: 'Roi de Carmélide et père de Guenièvre.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Bohort',
+  description: 'Chevalier de la Table ronde, souvent effrayé.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Gauvain',
+  description: 'Neveu du roi Arthur et chevalier de la Table ronde.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Yvain',
+  description: 'Chevalier de la Table ronde, également connu sous le nom de Chevalier au Lion.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Karadoc',
+  description: 'Chevalier de la Table ronde, grand amateur de nourriture.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Dagonet',
+  description: 'Chevalier de la Table ronde, souvent encline à la mélancolie.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Perceforest',
+  description: 'Chevalier de la Table ronde, fameux pour ses histoires interminables.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+Character.create(
+  name: 'Guethenoc',
+  description: 'Paysan de Kaamelott, souvent impliqué dans des quiproquos.',
+  price: rand(30.00..100.00).round(2),
+  rating: rand(1..5),
+)
+
+puts "Characters generated!"
