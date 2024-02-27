@@ -1,2 +1,19 @@
-<h1>Rentals#index</h1>
-<p>Find me in app/views/rentals/index.html.erb</p>
+<div class="container">
+
+  <h1>Mes locations</h1>
+  <ul>
+    <% @rentals.each do |rental|%>
+    <li>
+      <%= rental.character.name%>
+      <br>
+      <p>Pour la période du : </p>
+      <%= rental.start_date %>
+      <br>
+      <p>au :</p>
+      <%= rental.end_date %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Retour à l'accueil", root_path%>
+</div>
