@@ -1,0 +1,14 @@
+<%= simple_form_for [@character, @rental] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :start_date,
+                as: :string,
+                input_html: {data: { controller: "datepicker" }} %>
+    <%= f.input :end_date,
+                as: :string,
+                input_html: {data: { controller: "datepicker" }} %>
+    <%= f.button :submit %>
+  </div>
+<% end %>

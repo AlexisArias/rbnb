@@ -4,6 +4,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Charcater.find(params[:id])
+    @character = Character.find(params[:id])
+    @rental = Rental.new
   end
 end
