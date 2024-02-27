@@ -1,8 +1,23 @@
-<h1>Characters#index</h1>
-<p>Find me in app/views/characters/index.html.erb</p>
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <h1 class="mt-5">Bienvenue sur Kamerotto !</h1>
+  <h5>Salutation ô noble villageois.</h5>
 
-<ul>
-  <% @character.each do |character| %>
-    <li><%= character.name %></li>
-  <% end %>
-</ul>
+  <div class="container mt-5">
+    <div class="row g-2">
+      <% @characters.each do |character| %>
+        <div class="col-6 col-md-4">
+          <div class="p-3 border bg-light h-100">
+          <div class="h-30">
+            <%= image_tag character.image, class: "img-fluid" %>
+          </div>
+            <h5><%= character.name %></h5>
+            <p class="text-truncate-container"><%= character.description %></p>
+            <p>Note : <%= character.rating %>/5</p>
+            <p>Louer pour : <%= character.price %>€</p>
+            <%= link_to "Louer ce personnage", character_path(character), :class => "btn btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
