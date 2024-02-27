@@ -8,12 +8,22 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-puts "Clearing database..."
 
+
+
+puts "Clearing database..."
+Rental.destroy_all
 Character.destroy_all
+User.destroy_all
 
 puts "Database cleared!"
-
+puts "Creating user..."
+User.create!(
+  first_name: "Test",
+  last_name: "Test1",
+  email: "test@test.com",
+  password: "123456"
+)
 
 puts "Creating Kaamelott characters..."
 
