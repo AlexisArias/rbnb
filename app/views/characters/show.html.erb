@@ -1,7 +1,17 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<div class="container">
+<h1>Fiche de personnage</h1>
 
-<h2><%= @charcater.name %></h2>
-<p><%= @character.description %></p>
-<p><%= @character.price %></p>
-<p><%= @character.rating %></p>
+  <h2><%= @character.name %></h2>
+  <p><%= @character.description %></p>
+  <p><%= @character.price %>€/jour</p>
+  <p><%= @character.rating %>/5</p>
+
+  <div data-controller="toggle" class="mt-5">
+    <button data-action="click->toggle#fire" class="btn btn-outline-primary">Louer ce personnage !</button>
+    <div data-toggle-target="togglableElement" class="d-none">
+      <%= render "form", rental: @rental %>
+    </div>
+  </div>
+
+  <%= link_to "Retour à la liste", root_path%>
+</div>
