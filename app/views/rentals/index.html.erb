@@ -1,15 +1,20 @@
-<div class="container">
-
-  <h1>Mes locations</h1>
-  <ul>
-    <% @rentals.each do |rental|%>
-    <li>
-      <%= rental.character.name%>
-      <br>
-      <p>Pour la période du  <%= l(rental.start_date, format: "%d %B %Y") %>, au  <%= rental.end_date %></p>
-    </li>
-    <% end %>
-  </ul>
-
-  <%= link_to "Retour à l'accueil", root_path%>
-</div>
+<div class="container mb-4">
+ <%= link_to "Retour à l'accueil", root_path, :class => "btn btn-dark btn-rounded mt-3 mb-4"%>
+  <h1 class="mb-4 text-center">Mes locations</h1>
+    <div class="row">
+        <% @rentals.each do |rental|%>
+      <div class="col-md-4 mb-5">
+        <div class="card card-type mt-5">
+        <div class="d-flex column">
+        <%= image_tag rental.character.image, class:"d-inline-block", style:"object-fit: fill; width: auto; height: 150px;"%>
+        <div class="d-flex row text-center align-items m-0">
+        <h5><strong class="card-title text-center"><%= rental.character.name%></strong></h5>
+        <p class="m-0"><%= l(rental.start_date, format: "%d %B %Y")%></p>
+        <p class="m-0">au</p>
+        <p class="m-0"><%= l(rental.end_date, format: "%d %B %Y")%></p>
+        </div>
+        </div>
+        </div>
+      </div>
+        <% end %>
+    </div>
