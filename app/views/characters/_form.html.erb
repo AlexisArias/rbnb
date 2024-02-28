@@ -5,10 +5,12 @@
   <div class="form-inputs">
     <%= f.input :start_date,
                 as: :string,
+                label: 'Date de début',
                 input_html: {data: { controller: "datepicker" }} %>
     <%= f.input :end_date,
                 as: :string,
+                label: 'Date de fin',
                 input_html: {data: { controller: "datepicker" }} %>
-    <%= f.button :submit %>
+    <%= f.button :submit, "Louer", class:"border" %>
   </div>
 <% end %>
