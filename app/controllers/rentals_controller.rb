@@ -8,7 +8,6 @@ class RentalsController < ApplicationController
   end
 
   def create
-    I18n.locale = :fr
     @rental = Rental.new(rental_params)
     @rental.user = current_user
     @rental.character = Character.find(params[:character_id])
