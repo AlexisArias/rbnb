@@ -6,11 +6,7 @@
     <li>
       <%= rental.character.name%>
       <br>
-      <p>Pour la période du : </p>
-      <%= rental.start_date %>
-      <br>
-      <p>au :</p>
-      <%= rental.end_date %>
+      <p>Pour la période du : <%= l(rental.start_date, format: "%d %B %Y") %>, au : <%= rental.end_date %></p>
     </li>
     <% end %>
   </ul>
