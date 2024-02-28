@@ -1,14 +1,17 @@
 <div class="container mb-4">
+ <%= link_to "Retour à l'accueil", root_path, :class => "btn btn-dark btn-rounded mt-3 mb-4"%>
   <h1 class="mb-4 text-center">Mes locations</h1>
     <div class="row">
         <% @rentals.each do |rental|%>
-      <div class="col-md-4 mb-4">
-        <div class="card card-type">
+      <div class="col-md-4 mb-5">
+        <div class="card card-type mt-5">
         <div class="d-flex column">
-        <%= image_tag rental.character.image, class:"img-fluid img-card-type", style: "width: 100%; height: 200px;"%>
-        <div class="d-flex row text-center align-items">
-        <h5 class="card-title text-center mt-4"><%= rental.character.name%></h5>
-        <p class="card-text text-center"><%= rental.start_date %> - <%= rental.end_date %> </p>
+        <%= image_tag rental.character.image, class:"d-inline-block", style:"object-fit: fill; width: auto; height: 150px;"%>
+        <div class="d-flex row text-center align-items m-0">
+        <h5><strong class="card-title text-center"><%= rental.character.name%></strong></h5>
+        <p class="m-0"><%= rental.start_date %></p>
+        <p class="m-0">au</p>
+        <p class="m-0"><%= rental.end_date %></p>
         </div>
         </div>
         </div>
@@ -16,4 +19,3 @@
         <% end %>
     </div>
 </div>
-  <%= link_to "Retour à l'accueil", root_path%>
