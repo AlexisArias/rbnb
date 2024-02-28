@@ -9,13 +9,12 @@
         <%= image_tag rental.character.image, class:"d-inline-block", style:"object-fit: fill; width: auto; height: 150px;"%>
         <div class="d-flex row text-center align-items m-0">
         <h5><strong class="card-title text-center"><%= rental.character.name%></strong></h5>
-        <p class="m-0"><%= rental.start_date %></p>
+        <p class="m-0"><%= l(rental.start_date, format: "%d %B %Y")%></p>
         <p class="m-0">au</p>
-        <p class="m-0"><%= rental.end_date %></p>
+        <p class="m-0"><%= l(rental.end_date, format: "%d %B %Y")%></p>
         </div>
         </div>
         </div>
       </div>
         <% end %>
     </div>
-</div>
