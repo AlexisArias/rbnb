@@ -29,7 +29,7 @@ puts "Creating Kaamelott characters..."
 
 Character.create(
   name: 'Dame Séli',
-  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche !",
+  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche ! Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
   image: 'dame_seli.webp'
@@ -37,74 +37,74 @@ Character.create(
 
 Character.create(
   name: 'Le roi Loth',
-  description: "Tempora mori, tempora mundis recorda. Voilà. Eh bien ça, par exemple, ça veut absolument rien dire",
+  description: "Tempora mori, tempora mundis recorda. Voilà. Eh bien ça, par exemple, ça veut absolument rien dire Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'roi_loth.webp'
+  image: 'roi_loth.webp'
 )
 
 Character.create(
   name: 'Perceval de Galles',
-  description: "Faut arrêter ces conneries de nord et de sud ! Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout !",
+  description: "Faut arrêter ces conneries de nord et de sud ! Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout ! Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: 60.00,
   rating: rand(1..5),
-    image: 'perceval.webp'
+  image: 'perceval.webp'
 )
 
 Character.create(
   name: 'Léodagan',
-  description: 'Roi de Carmélide et père de Guenièvre.',
+  description: "Roi de Carmélide et père de Guenièvre. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'leodagan.webp'
+  image: 'leodagan.webp'
 )
 
 Character.create(
   name: 'Bohort',
-  description: 'Chevalier de la Table ronde, souvent effrayé.',
+  description: "Chevalier de la Table ronde, souvent effrayé. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'bohort.jpeg'
+  image: 'bohort.jpeg'
 )
 
 Character.create(
   name: 'Gauvain',
-  description: 'Neveu du roi Arthur et chevalier de la Table ronde.',
+  description: "Neveu du roi Arthur et chevalier de la Table ronde. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'gauvain.webp'
+  image: 'gauvain.webp'
 )
 
 Character.create(
   name: 'Yvain',
-  description: 'Chevalier de la Table ronde, également connu sous le nom de Chevalier au Lion.',
+  description: "Chevalier de la Table ronde, également connu sous le nom de Chevalier au Lion. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'yvain.webp'
+  image: 'yvain.webp'
 )
 
 Character.create(
   name: 'Karadoc',
-  description: 'Chevalier de la Table ronde, grand amateur de nourriture.',
+  description: "Chevalier de la Table ronde, grand amateur de nourriture. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'karadoc.jpeg'
+  image: 'karadoc.jpeg'
 )
 
 Character.create(
   name: 'Dagonet',
-  description: 'Chevalier de la Table ronde, souvent encline à la mélancolie.',
+  description: "Chevalier de la Table ronde, souvent encline à la mélancolie. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'dagonet.webp'
+  image: 'dagonet.webp'
 )
 
 Character.create(
   name: 'Guethenoc',
-  description: 'Paysan de Kaamelott, souvent impliqué dans des quiproquos.',
+  description: "Paysan de Kaamelott, souvent impliqué dans des quiproquos. Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
-    image: 'guethenoc.webp'
+  image: 'guethenoc.webp'
 )
 
 puts "Characters generated!"
