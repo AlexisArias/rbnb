@@ -1,10 +1,29 @@
 // Specific CSS for your home-page
+@font-face {
+  font-family: "Folkard";
+  src: url("app/assets/fonts/folkard_.ttf");
+}
+
 .text-truncate-container {
   overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: var(--read-more-line-clamp, 2);
+}
+
+h1, h4, .kaamelott {
+  font-family: "Folkard";
+  color: white;
+}
+
+p, h5 {
+  font-family: "Montserrat";
+  color: white;
+}
+
+.card-body p {
+  font-size: 0.7em;
+  color: white;
 }
 
 body {
@@ -12,19 +31,21 @@ body {
 }
 
 .img-card-type {
-  border-radius: 20px 20px 0px 0px;
   filter: grayscale(100%);
   transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 .img-card-type:hover {
-  border-radius: 20px 20px 0px 0px;
   filter: none;
-  transform: scale(1.02);
 }
 
 .card-type {
-  border-radius: 20px;
-  border: 1px solid rgb(228, 228, 228);
-  background-color: rgb(255, 255, 255);
+  transition: transform 0.3s ease;
+  background-color: #1b1f23;
+}
+
+.card-type:hover {
+  @extend .shadow-sm;
+  transform: scale(1.01);
+  background-color: #21272c;
 }

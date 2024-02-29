@@ -8,9 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-
-
 puts "Clearing database..."
 Rental.destroy_all
 Character.destroy_all
@@ -42,7 +39,6 @@ Character.create(
   rating: rand(1..5),
   image: 'roi_loth.webp'
 )
-
 
 Character.create(
   name: 'Léodagan',
