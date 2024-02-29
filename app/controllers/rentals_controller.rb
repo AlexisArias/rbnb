@@ -16,7 +16,7 @@ class RentalsController < ApplicationController
       flash[:notice] = "Félicitations, vous avez réservé un personnage de Kaamelott ! On est pas sortis du sable !"
       redirect_to user_rentals_path(current_user)
     else
-      flash[:alert] = "Aïe, il y a eu une erreur lors de la création de votre réservation. Essayez de chanter Sloubi"
+      flash[:alert] = "Aïe, il y a eu une erreur lors de la création de votre réservation. Essayez de chanter Sloubi."
       redirect_to character_path(character)
     end
   end
