@@ -1,6 +1,11 @@
 class RentalsController < ApplicationController
   def index
-    @rentals = current_user.rentals
+    if params[:query].present?
+      @rentals = Rental.search_rental_by_character_name(params[:query])
+      params[:query] = nil
+    else
+      @rentals = current_user.rentals
+    end
   end
 
   def new

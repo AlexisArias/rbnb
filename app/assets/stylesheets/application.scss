@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@font-face {
+  font-family: "Folkard";
+  src: url("folkard_.ttf") format('truetype');
+}

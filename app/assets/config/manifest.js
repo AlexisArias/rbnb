@@ -5,3 +5,4 @@
 //= link_tree ../audio
 //= link popper.js
 //= link bootstrap.min.js
+//= link_tree ../fonts
