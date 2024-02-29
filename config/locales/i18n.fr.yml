@@ -168,3 +168,17 @@ fr:
       previous: "&lsaquo; Précédent"
       next: "Suivant &rsaquo;"
       truncate: "&hellip;"
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Erreur"
+
+  devise:
+    failure:
+      user:
+        unauthenticated: "Non connecté"
+    sessions:
+      user:
+        signed_in: "Connecté"
+        signed_out: "Déconnecté"
