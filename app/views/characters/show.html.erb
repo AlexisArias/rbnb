@@ -1,12 +1,12 @@
-<div class="container">
-  <%= link_to "Retour à la liste", root_path, :class => "btn btn-outline-dark btn-rounded mt-3 mb-4"%>
+<div class="container mb-5">
+  <%= link_to "Retour à la liste", root_path, :class => "btn btn-light btn-rounded mt-4 mb-4", style:"font-family:'Montserrat';font-size:0.7em"%>
 
-  <div class="d-flex border img-border shadow-sm p-4">
+  <div class="d-flex p-4" style="background:#1b1f23;">
     <%= image_tag @character.image, class:"d-inline-block img-border", style: "width: 300px; height: 400px; object-fit: cover;"%>
     <div class="d-flex flex-column m-4 justify-content-between">
-      <div class="d-flex justify-content-between align-items-end mb-4 border-bottom border-1">
+      <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-1">
         <h1><strong><%= @character.name %></strong></h1>
-        <p>2/5 <% @character.rating.to_i.times do  %>
+        <p><%= @character.rating %>/5 <% @character.rating.to_i.times do  %>
         <i class="bi bi-star-fill" style="color:orange;"></i>
         <% end %>
         </p>
@@ -14,7 +14,7 @@
       <h5 class="mt-5"><strong>Description du personnage</strong></h5>
       <p class="salut"><%= @character.description %></p>
       <div data-controller="toggle" class="mt-5" style="position:relative">
-        <button data-action="click->toggle#fire" class="btn btn-dark">Louer ce personnage</button>
+        <button data-action="click->toggle#fire" class="btn btn-light btn-rounded mt-4", style="font-family:'Montserrat';font-size:0.7em">Louer ce personnage</button>
           <div data-toggle-target="togglableElement" class="d-none">
             <div class="border text-dark bg-white p-4" style="width:300px;height:270px;position:absolute;top:-3px;left:220px">
             <%= render "form", rental: @rental %>
@@ -24,25 +24,25 @@
     </div>
   </div>
 
-  <div class="mt-5 pb-3 mb-4 d-flex justify-content-between align-items-center border-bottom border-1">
+  <div class="mt-5 pb-3 d-flex justify-content-between align-items-center">
     <div>
-      <h4>Louez plus.</h4>
-      <p>Elle est où la poulette ?</p>
+      <h4 style="font-family:'Montserrat'">Louez plus.</h4>
+      <p style="font-size:0.7em">Elle est où la poulette ?</p>
     </div>
-    <%= link_to "Voir tous nos personnages", root_path, :class => "btn btn-outline-dark btn-rounded mt-3 mb-4"%>
+    <%= link_to "Voir tous nos personnages", root_path, :class => "btn btn-light btn-rounded mt-3 mb-4", style:"font-family:'Montserrat';font-size:0.7em"%>
   </div>
 
   <div class="d-flex justify-content-between scrollmenu">
     <% Character.order("RANDOM()").first(4).each do |character|%>
-      <div class="children d-flex justify-content-between align-items-center border img-border shadow-sm p-4 m-1" style="width:250px">
+      <div class="children d-flex justify-content-between align-items-center p-4 m-1 card-type" style="width:250px;">
           <%= image_tag character.image, class:"d-inline-block img-border", style:"width: 100px; height: 150px; object-fit: cover; max-width:200px;"%>
           <div class="d-flex flex-column align-items-center">
-            <p class="m-0"><strong><%= character.name %></strong></p>
+            <p class="m-0"><strong class="kaamelott"><%= character.name %></strong></p>
             <p><% character.rating.to_i.times do  %>
               <i class="bi bi-star-fill" style="color:orange;"></i>
             <% end %>
             </p>
-            <%= link_to "Louer", character_path(character), :class => "btn btn-dark btn-rounded"%>
+            <%= link_to "Louer", character_path(character), :class => "btn btn-light btn-rounded", style:"font-family:'Montserrat';font-size:0.6em"%>
           </div>
       </div>
     <% end %>

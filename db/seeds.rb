@@ -8,9 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-
-
 puts "Clearing database..."
 Rental.destroy_all
 Character.destroy_all
@@ -41,14 +38,6 @@ Character.create(
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
   image: 'roi_loth.webp'
-)
-
-Character.create(
-  name: 'Perceval de Galles',
-  description: "Faut arrêter ces conneries de nord et de sud ! Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout ! Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
-  price: 60.00,
-  rating: rand(1..5),
-  image: 'perceval.webp'
 )
 
 Character.create(
@@ -89,6 +78,14 @@ Character.create(
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
   image: 'karadoc.jpeg'
+)
+
+Character.create(
+  name: 'Perceval de Galles',
+  description: "Faut arrêter ces conneries de nord et de sud ! Une fois pour toutes, le nord, suivant comment on est tourné, ça change tout ! Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
+  price: 60.00,
+  rating: rand(1..5),
+  image: 'perceval.webp'
 )
 
 Character.create(
