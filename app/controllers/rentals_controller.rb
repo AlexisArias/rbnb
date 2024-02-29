@@ -15,13 +15,14 @@ class RentalsController < ApplicationController
   def create
     @rental = Rental.new(rental_params)
     @rental.user = current_user
-    @rental.character = Character.find(params[:character_id])
-    if @rental.save!
-      flash[:notice] = "Congratulations, you have booked a Kaamelott character!"
+    character = Character.find(params[:character_id])
+    @rental.character = character
+    if @rental.save
+      flash[:notice] = "Félicitations, vous avez réservé un personnage de Kaamelott ! On est pas sortis du sable !"
       redirect_to user_rentals_path(current_user)
     else
-      flash[:alert] = "Warning, there was an issue creating your booking!"
-      render :new, status: :unprocessable_entity
+      flash[:alert] = "Aïe, il y a eu une erreur lors de la création de votre réservation. Essayez de chanter Sloubi."
+      redirect_to character_path(character)
     end
   end
 

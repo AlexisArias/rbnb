@@ -11,10 +11,7 @@
 @import "components/index";
 @import "pages/index";
 
-.text-truncate-container {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+@font-face {
+  font-family: "Folkard";
+  src: url("folkard_.ttf") format('truetype');
 }

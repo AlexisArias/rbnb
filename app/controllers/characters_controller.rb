@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
       @characters = Character.search_by_name(params[:query])
       #params[:query] = nil
     else
-      @characters = Character.all
+      @characters = Character.order(:name)
     end
 
     respond_to do |format|
@@ -18,6 +18,7 @@ class CharactersController < ApplicationController
   end
 
   def show
+    @characters = index
     @character = Character.find(params[:id])
     @rental = Rental.new
   end

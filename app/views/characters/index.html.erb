@@ -1,7 +1,6 @@
 <div class="container d-flex flex-column justify-content-center align-items-center" data-controller="search-bar">
-  <h1 class="mt-5">Bienvenue sur <strong>Kamerotto</strong> !</h1>
-  <h5 class="mb-5">Salutation ô noble villageois.</h5>
-
+  <h1 class="mt-5 mb-0">Bienvenue sur <strong>Kamerotto</strong> !</h1>
+  <p class="mb-5", style="font-weight:200">Salutation Ô noble villageois.</p>
 
   <%= form_with(url: characters_path, method: :get, class:"mb-5 d-flex justify-content-center", data: { search_bar_target: "form" }) do %>
   <%= text_field_tag :query,
@@ -13,6 +12,6 @@
                     } %>
   <% end %>
   <div data-search-bar-target="results">
-<%= render "characters/index", characters: @characters %>
+    <%= render "characters/index", characters: @characters %>
   </div>
 </div>

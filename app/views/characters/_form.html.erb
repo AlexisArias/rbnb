@@ -1,14 +1,17 @@
-<%= simple_form_for [@character, @rental] do |f| %>
+<%= simple_form_for [@character, @rental], turbo: false do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <div class="form-inputs", data-controller="button-sound">
     <%= f.input :start_date,
                 as: :string,
+                label: 'Date de début',
                 input_html: {data: { controller: "datepicker" }} %>
     <%= f.input :end_date,
                 as: :string,
+                label: 'Date de fin',
                 input_html: {data: { controller: "datepicker" }} %>
-    <%= f.button :submit %>
+    <%= f.button :submit, "Louer", class:"border", data: { action: "click->button-sound#playSound"}%>
+    <%= audio_tag "kaamelott.mp3", controls: false, data: {"button-sound-target" => "audioInput"} %>
   </div>
 <% end %>
