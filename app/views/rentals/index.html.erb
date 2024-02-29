@@ -1,6 +1,12 @@
 <div class="container">
 
   <h1>Mes locations</h1>
+
+<%= form_with(url: user_rentals_path, method: :get, class: "mb-5 d-flex justify-content-center") do %>
+  <%= text_field_tag :query, params[:query], placeholder: "Recherchez vos locations" %>
+  <%= submit_tag "Recherche" %>
+<% end %>
+
   <ul>
     <% @rentals.each do |rental|%>
     <li>
