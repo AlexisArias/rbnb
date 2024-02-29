@@ -6,7 +6,7 @@
   -webkit-line-clamp: var(--read-more-line-clamp, 2);
 }
 
-h1, h4, .kaamelott {
+h1, h2, h3, .kaamelott {
   font-family: "Folkard";
   color: white;
 }
@@ -17,7 +17,7 @@ p, h5 {
 }
 
 .card-body p {
-  font-size: 0.7em;
+  font-size: 0.9em;
   color: white;
 }
 
@@ -43,4 +43,22 @@ body {
   @extend .shadow-sm;
   transform: scale(1.01);
   background-color: #21272c;
+}
+
+#query {
+  padding: 10px;
+  border: 1px solid #727272;
+  border-radius: 50px;
+  width: 300px;
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat';
+  background: transparent;
+}
+
+#query:focus {
+  outline: none;
+  border:1px solid #21272c;
+  box-shadow: 0 0 5px #5e5e5e;
+  transition: 0.3s ease;
 }
