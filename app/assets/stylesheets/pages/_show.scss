@@ -1,7 +1,25 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
 .salut {
   text-align: justify;
 }
 
 .img-border {
   border-radius: 20px;
+}
+
+.rental-form {
+  transition: 0.3s ease;
+}
+
+.card-type {
+  background-color: #1b1f23;
 }

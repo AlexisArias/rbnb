@@ -15,3 +15,8 @@
   font-family: "Folkard";
   src: url("folkard_.ttf") format('truetype');
 }
+@keyframes fadeOut {
+  from {
+  opacity: 1;
+  }
+}

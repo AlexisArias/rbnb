@@ -1,5 +1,5 @@
 <div class="container mb-5">
-  <%= link_to "Retour à la liste", root_path, :class => "btn btn-light btn-rounded mt-4 mb-4", style:"font-family:'Montserrat';font-size:0.7em"%>
+  <%= link_to "Retour à la liste", root_path, :class => "btn btn-light btn-rounded mt-4 mb-4", style:"font-family:'Montserrat';font-size:0.9em"%>
 
   <div class="d-flex p-4" style="background:#1b1f23;">
     <%= image_tag @character.image, class:"d-inline-block img-border", style: "width: 300px; height: 400px; object-fit: cover;"%>
@@ -13,10 +13,10 @@
       </div>
       <h5 class="mt-5"><strong>Description du personnage</strong></h5>
       <p class="salut"><%= @character.description %></p>
-      <div data-controller="toggle" class="mt-5" style="position:relative">
-        <button data-action="click->toggle#fire" class="btn btn-light btn-rounded mt-4", style="font-family:'Montserrat';font-size:0.7em">Louer ce personnage</button>
+      <div data-controller="toggle" class="mt-5 d-flex justify-content-end" style="position:relative">
+        <button data-action="click->toggle#fire" class="btn btn-light btn-rounded mt-4", style="font-family:'Montserrat';font-size:0.9em">Louer ce personnage</button>
           <div data-toggle-target="togglableElement" class="d-none">
-            <div class="border text-dark bg-white p-4" style="width:300px;height:270px;position:absolute;top:-3px;left:220px">
+            <div class="border text-dark bg-white p-4 rental-form" style="width:300px;height:270px;position:absolute;top:-50px;left:200px">
             <%= render "form", rental: @rental %>
           </div>
         </div>
@@ -26,23 +26,46 @@
 
   <div class="mt-5 pb-3 d-flex justify-content-between align-items-center">
     <div>
-      <h4 style="font-family:'Montserrat'">Louez plus.</h4>
-      <p style="font-size:0.7em">Elle est où la poulette ?</p>
+      <h4 style="font-family:'Montserrat';color:white"><strong>Louez plus.</strong></h4>
+      <p style="font-size:0.9em;font-style:italic">Elle est où la poulette ?</p>
     </div>
-    <%= link_to "Voir tous nos personnages", root_path, :class => "btn btn-light btn-rounded mt-3 mb-4", style:"font-family:'Montserrat';font-size:0.7em"%>
+    <%= link_to "Voir tous nos personnages", root_path, :class => "btn btn-light btn-rounded mt-3 mb-4", style:"font-family:'Montserrat';font-size:0.9em"%>
   </div>
 
   <div class="d-flex justify-content-between scrollmenu">
     <% Character.order("RANDOM()").first(4).each do |character|%>
       <div class="children d-flex justify-content-between align-items-center p-4 m-1 card-type" style="width:250px;">
           <%= image_tag character.image, class:"d-inline-block img-border", style:"width: 100px; height: 150px; object-fit: cover; max-width:200px;"%>
-          <div class="d-flex flex-column align-items-center">
-            <p class="m-0"><strong class="kaamelott"><%= character.name %></strong></p>
-            <p><% character.rating.to_i.times do  %>
-              <i class="bi bi-star-fill" style="color:orange;"></i>
+          <div class="d-flex flex-column text-center align-items-center">
+            <% if character.name == "La Dame du Lac" %>
+              <% partie1 = character.name[0, 7] %>
+              <% partie2 = character.name[7..-1] %>
+              <strong class="kaamelott"><%= partie1 %></strong>
+              <strong class="kaamelott"><%= partie2 %></strong>
+            <% else %>
+              <strong class="kaamelott"><%= character.name %></strong>
             <% end %>
+
+          <% if character.rating.to_i > 4 %>
+            <p class="m-0">
+              <% 3.times do  %>
+                <i class="bi bi-star-fill" style="color:orange;"></i>
+              <% end %>
             </p>
-            <%= link_to "Louer", character_path(character), :class => "btn btn-light btn-rounded", style:"font-family:'Montserrat';font-size:0.6em"%>
+            <p>
+              <% 2.times do  %>
+                <i class="bi bi-star-fill" style="color:orange;"></i>
+              <% end %>
+            </p>
+          <% else %>
+            <p>
+              <% character.rating.to_i.times do  %>
+                <i class="bi bi-star-fill" style="color:orange;"></i>
+              <% end %>
+            </p>
+          <% end %>
+
+            <%= link_to "Louer", character_path(character), :class => "btn btn-light btn-rounded", style:"font-family:'Montserrat';font-size:0.8em"%>
           </div>
       </div>
     <% end %>
