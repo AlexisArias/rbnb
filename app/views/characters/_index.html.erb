@@ -1,34 +1,40 @@
 <div class="container">
   <div class="row">
-    <% @characters.each do |character| %>
-      <div class="col-md-3 col-sm-6 mb-5 d-flex align-items-stretch">
-        <div class="card-type rounded-top-5">
-        <%= link_to character_path(character) do %>
-          <%= image_tag character.image, class:"img-fluid img-card-type rounded-top-5", style: "width: 100%; height: 350px; object-fit: cover;"  %>
-        <% end %>
-          <div class="card-body pb-2 mb-2 d-flex flex-column justify-content-center align-items-center">
-            <h2 class="text-center mt-4 mb-2"><%= character.name %></h2>
-            <div class="d-flex text-center">
-              <p><%  character.rating.to_i.times do  %>
-                <i class="bi bi-star-fill" style="color:orange;"></i>
-              <% end %><br><%= character.rating %>/5
-              </p>
-            </div>
-            <div data-controller="read-more" data-read-more-more-text-value="Lire plus ↓" data-read-more-less-text-value="Lire moins ↑">
-              <p class="text-truncate-container m-0" data-read-more-target="content">
-                <%= character.description %>
-              </p>
-              <a data-action="read-more#toggle">
-                <p class="mb-4 text-center lire"><u>Lire plus ↓</u></p>
-              </a>
-            </div>
-            <div class="d-flex flex-column justify-content-between align-items-center">
-              <p class="m-0">Tarif de location</p>
-              <h5><strong><%= character.price %>€/jour</strong></h5>
-              <p class="mt-4"><%= link_to "Louer", character_path(character), :class => "btn btn-light btn-rounded", style:"font-family:'Montserrat';font-size:1em"%></p>
+    <% if @characters.any? %>
+      <% @characters.each do |character| %>
+        <div class="col-md-3 col-sm-6 mb-5 d-flex align-items-stretch">
+          <div class="card-type rounded-top-5">
+          <%= link_to character_path(character) do %>
+            <%= image_tag character.image, class:"img-fluid img-card-type rounded-top-5", style: "width: 100%; height: 350px; object-fit: cover;"  %>
+          <% end %>
+            <div class="card-body pb-2 mb-2 d-flex flex-column justify-content-center align-items-center">
+              <h2 class="text-center mt-4 mb-2"><%= character.name %></h2>
+              <div class="d-flex text-center">
+                <p><%  character.rating.to_i.times do  %>
+                  <i class="bi bi-star-fill" style="color:orange;"></i>
+                <% end %><br><%= character.rating %>/5
+                </p>
+              </div>
+              <div data-controller="read-more" data-read-more-more-text-value="Lire plus ↓" data-read-more-less-text-value="Lire moins ↑">
+                <p class="text-truncate-container m-0" data-read-more-target="content">
+                  <%= character.description %>
+                </p>
+                <a data-action="read-more#toggle">
+                  <p class="mb-4 text-center lire"><u>Lire plus ↓</u></p>
+                </a>
+              </div>
+              <div class="d-flex flex-column justify-content-between align-items-center">
+                <p class="m-0">Tarif de location</p>
+                <h5><strong><%= character.price %>€/jour</strong></h5>
+                <p class="mt-4"><%= link_to "Louer", character_path(character), :class => "btn btn-light btn-rounded", style:"font-family:'Montserrat';font-size:1em"%></p>
+              </div>
             </div>
           </div>
         </div>
+      <% end %>
+    <% else %>
+      <div class="col-md-12 text-center">
+        <p>Pas de glandus à l'horizon...</p>
       </div>
     <% end %>
   </div>
