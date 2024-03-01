@@ -26,7 +26,7 @@ puts "Creating Kaamelott characters..."
 
 Character.create(
   name: 'Dame Séli',
-  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche ! Je ne pense pas que vous soyez en mesure de parler de votre belle-mère Arthur Cuillière !",
+  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. Tout le monde le sait, en Carmélide, que vous êtes une patate. Seulement, ça passe parce que les gens savent que c'est moi qui tire les ficelles dans l'arrière boutique.",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
   image: 'dame_seli.webp'

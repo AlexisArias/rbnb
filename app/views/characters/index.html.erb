@@ -2,15 +2,21 @@
   <h1 class="mt-5 mb-0" style="font-size:4.5rem">Bienvenue sur <strong>Kamerotto</strong></h1>
 
   <%= form_with(url: characters_path, method: :get, class:"mb-5 d-flex justify-content-center", data: { search_bar_target: "form" }) do %>
-  <%= text_field_tag :query,
-                     params[:query],
-                     placeholder: "Recherchez vos personnages...",
-                     data: {
-                      action: "keyup->search-bar#send",
-                      search_bar_target: "input"
-                    } %>
+  <div class="search-container">
+    <%= text_field_tag :query,
+                        params[:query],
+                        placeholder: "Recherchez votre personnage...",
+                        data: {
+                        action: "keyup->search-bar#send",
+                        search_bar_target: "input"
+                      },
+                      class: "search-input" %>
+    <div class="cursor"></div>
+    </div>
   <% end %>
+
   <div data-search-bar-target="results">
     <%= render "characters/index", characters: @characters %>
   </div>
 </div>
+<%= render "shared/footer" %>
