@@ -22,4 +22,13 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @rental = Rental.new
   end
+
+  def search
+    @query = params[:query]
+    @characters = Character.where("name LIKE ?", "%#{@query}%")
+    if @characters.empty?
+      flash.now[:alert] = "Nous n'avons pas trouvé de correspondance à votre recherche."
+    end
+    render partial: 'characters/index'
+  end
 end

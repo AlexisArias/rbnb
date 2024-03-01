@@ -26,7 +26,7 @@ puts "Creating Kaamelott characters..."
 
 Character.create(
   name: 'Dame Séli',
-  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche !",
+  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. Tout le monde le sait, en Carmélide, que vous êtes une patate. Seulement, ça passe parce que les gens savent que c'est moi qui tire les ficelles dans l'arrière boutique.",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
   image: 'dame_seli.webp'
@@ -81,7 +81,7 @@ Character.create(
 )
 
 Character.create(
-  name: 'Perceval de Galles',
+  name: 'Perceval',
   description: "Donc, pour résumer, je suis souvent victime des colibris, sous-entendu des types qu’oublient toujours tout. Euh, non… Bref, tout ça pour dire, que je voudrais bien qu’on me considère en tant que Tel.",
   price: 60.00,
   rating: rand(1..5),

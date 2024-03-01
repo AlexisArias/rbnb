@@ -20,9 +20,22 @@
 
   <body style="background-color:#000000">
     <%= render "shared/navbar" %>
-    <p class="notice", style="display:none"><%= notice %></p>
-    <p class="alert", style="display:none"><%= alert %></p>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-info alert-dismissible fade show mt-3 m-1 w-100" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-warning alert-dismissible fade show mt-3 m-1 w-100" role="alert">
+          <%= alert %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button>
+        </div>
+      <% end %>
+    </div>
     <%= yield %>
-    <%= render "shared/footer" %>
   </body>
 </html>

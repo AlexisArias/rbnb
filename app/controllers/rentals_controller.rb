@@ -6,6 +6,12 @@ class RentalsController < ApplicationController
     else
       @rentals = current_user.rentals
     end
+    respond_to do |format|
+      format.html
+      format.text do
+        render partial: "rentals/index", locals: { characters: @characters }, formats: [:html]
+      end
+    end
   end
 
   def new
