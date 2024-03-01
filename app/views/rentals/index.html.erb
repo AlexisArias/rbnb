@@ -1,12 +1,14 @@
-<div class="container mb-4">
+<div class="container mb-4" data-controller="rental-search-bar">
  <%= link_to "Retour à l'accueil", root_path, :class => "btn btn-dark btn-rounded mt-3 mb-4"%>
   <h1 class="mb-4 text-center">Mes locations</h1>
+
   <%= form_with(url: user_rentals_path, method: :get, class: "mb-5 d-flex justify-content-center") do %>
   <%= text_field_tag :query, params[:query], placeholder: "Recherchez vos locations" %>
   <%= submit_tag "Recherche" %>
   <% end %>
+
     <div class="row">
-        <% @rentals.each do |rental|%>
+        <% rentals.each do |rental|%>
       <div class="col-md-4 mb-5">
         <div class="card card-type mt-5 p-2">
         <div class="d-flex column">
@@ -21,4 +23,3 @@
         </div>
       </div>
         <% end %>
-    </div>

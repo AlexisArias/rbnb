@@ -1,5 +1,6 @@
 <div class="container">
     <div class="row">
+    <% if @characters.any? %>
       <% @characters.each do |character| %>
         <div class="col-md-3 col-sm-6 mb-5 d-flex align-items-stretch">
           <div class="card-type rounded-top-5">
@@ -31,5 +32,10 @@
           </div>
         </div>
       <% end %>
-    </div>
+    <% else %>
+      <div class="col-md-12 text-center">
+        <p>Pas de glandus à l'horizon...</p>
+      </div>
+    <% end %>
   </div>
+</div>
