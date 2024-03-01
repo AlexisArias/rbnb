@@ -178,6 +178,7 @@ fr:
     failure:
       user:
         unauthenticated: "Non connecté"
+        already_authenticated: "Déjà connecté"
     sessions:
       user:
         signed_in: "Connecté"
