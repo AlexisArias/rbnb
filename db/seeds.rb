@@ -26,7 +26,7 @@ puts "Creating Kaamelott characters..."
 
 Character.create(
   name: 'Dame Séli',
-  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche ! Sleeps on my head. Walk on car leaving trail of paw prints on hood and windshield stare at ceiling light. Chase red laser dot catch mouse and gave it as a present run up and down stairs purrr purr littel cat,",
+  description: "Vous vous étonnerez pas si vous ressentez une vive douleur sur le sommet du crâne. C’est sûrement que vous aurez pris le plat à gigot dans la tronche !",
   price: rand(30.00..100.00).round(2),
   rating: rand(1..5),
   image: 'dame_seli.webp'
